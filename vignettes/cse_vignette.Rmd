@@ -1,0 +1,95 @@
+---
+title: "CSE Package"
+author: "Bilal ELMSILI"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{CSE Package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+library(magrittr)
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+The goal of CSE (Casablanca Stock Exchange) is to simplify financial programming workflow with Casablanca stock exchange data.
+
+Currently, it implements 3 mains functions:
+
+- `listed_symbols`: Returns all listed symbols (stocks, indexes, or both) in Casablanca stock exchange.
+
+- `get_symbol`: Returns a symbol historical data corresponding to a specific date range.
+
+- `ipo_date`: Returns a symbol IPO (Initial Public Offering) date.
+
+## Quick Demo
+
+### Firms currently listed in Casablanca stock exchange
+
+```{r, warning=FALSE}
+all_stocks <- CSE::listed_symbols(type = "stock")
+all_stocks %>% length()
+```
+
+```{r, warning=FALSE}
+dplyr::data_frame(Firm = all_stocks) %>%
+    head(n = 10) %>%
+    knitr::kable()
+```
+
+### Available indexes
+
+```{r, warning=FALSE}
+all_indexes <- CSE::listed_symbols(type = "index")
+all_indexes %>% nrow()
+```
+
+```{r, warning=FALSE}
+all_indexes %>%
+    head(n = 10) %>%
+    knitr::kable()
+```
+
+### IPO Dates
+
+```{r, warning=FALSE}
+firm_sample <- all_stocks %>% 
+    sample(size = 5)
+
+ipo_dates <- firm_sample %>%
+    purrr::map(CSE::ipo_date)
+
+dplyr::data_frame(Firm = firm_sample, IPO_Date = do.call(c, ipo_dates)) %>%
+    knitr::kable()
+```
+
+### Get Some Historical Data
+
+```{r, warning=FALSE}
+iam <- CSE::get_symbol("ITISSALAT AL-MAGHRIB", "2016-01-01", "2018-07-16", type = "stock")
+masi <- CSE::get_symbol("MASI", "2016-01-01", "2018-07-16", type = "index")
+```
+
+```{r, warning=FALSE}
+dim(iam)
+
+dim(masi)
+
+xts::first(iam, n = 5)
+
+xts::last(iam, n = 5)
+
+xts::first(masi, n = 5)
+
+xts::last(masi, n = 5)
+```
+
+```{r, fig.width=7.5, fig.height=5, warning=FALSE}
+plot(masi, main = "MASI Historical Values")
+plot(iam$Adjusted, main = "IAM Historical Adjusted Prices")
+```

@@ -1,0 +1,17 @@
+Package: CSE
+Type: Package
+Title: Get Casablanca Stock Exchange (Morocco) Data Directly Into R
+Version: 0.1.0
+Author: Bilal ELMSILI
+Maintainer: Bilal ELMSILI <bilalencg@gmail.com>
+Description: A simple package to work with Casablanca Stock Exchange (Morocco) financial data directly in R.
+    Inspired by the getSymbol function available in quantmod package.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: lubridate, httr, magrittr, rvest, stringr, xml2, xts, dplyr, purrr
+Suggests: testthat,
+    knitr,
+    rmarkdown
+RoxygenNote: 6.0.1
+VignetteBuilder: knitr

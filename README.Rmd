@@ -1,0 +1,69 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+library(magrittr)
+knitr::opts_chunk$set(
+    collapse = TRUE,
+    comment = "#>",
+    fig.path = "README-"
+)
+```
+
+[![Travis-CI Build Status](https://travis-ci.org/bilnash/CSE.svg?branch=master)](https://travis-ci.org/bilnash/CSE)
+
+# CSE
+
+The goal of CSE (Casablanca Stock Exchange) is to simplify financial programming workflow with Casablanca stock exchange data.
+
+Currently, it implements 3 mains functions:
+
+- `listed_symbols`: Returns all listed symbols (stocks, indexes, or both) in Casablanca stock exchange.
+
+- `get_symbol`: Returns a symbol historical data corresponding to a specific date range.
+
+- `ipo_date`: Returns a symbol IPO (Initial Public Offering) date.
+
+## Installation
+
+You can install CSE from github with:
+
+```{r gh-installation, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("bilnash/CSE", build_vignettes = TRUE)
+```
+
+## Documentation
+
+A detailled documentation can be found in the package vignette. 
+
+```{r documentation, eval = FALSE}
+vignette("cse_vignette", package = "CSE")
+```
+
+## Example
+
+This is a basic example which shows you how to use CSE:
+
+```{r listed_stocks, warning=FALSE}
+listed_stocks <- CSE::listed_symbols(type = "stock")
+available_indexes <- CSE::listed_symbols(type = "index")
+
+head(listed_stocks)
+
+head(available_indexes)
+```
+
+```{r historical_stocks, warning=FALSE}
+cosumar_data <- CSE::get_symbol(symbol = "COSUMAR", from = "2018-01-01", to = "2018-06-30", type = "stock")
+
+masi_data <- CSE::get_symbol(symbol = "MASI", from = "2018-01-01", to = "2018-06-30", type = "index")
+
+head(cosumar_data) 
+
+head(masi_data)
+
+```
