@@ -10,7 +10,7 @@ all_stocks <- CSE::listed_symbols(type = "stock")
 all_stocks %>% length()
 
 ## ---- warning=FALSE-----------------------------------------------------------
-dplyr::data_frame(Firm = all_stocks) %>%
+dplyr::tibble(Firm = all_stocks) %>%
     head(n = 10) %>%
     knitr::kable()
 
@@ -30,7 +30,7 @@ firm_sample <- all_stocks %>%
 ipo_dates <- firm_sample %>%
     purrr::map(CSE::ipo_date)
 
-dplyr::data_frame(Firm = firm_sample, IPO_Date = do.call(c, ipo_dates)) %>%
+dplyr::tibble(Firm = firm_sample, IPO_Date = do.call(c, ipo_dates)) %>%
     knitr::kable()
 
 ## ---- warning=FALSE-----------------------------------------------------------

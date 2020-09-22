@@ -319,7 +319,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">all_stocks &lt;-<span class="st"> </span>CSE<span class="op">::</span><span class="kw">listed_symbols</span>(<span class="dt">type =</span> <span class="st">&quot;stock&quot;</span>)</a>
 <a class="sourceLine" id="cb1-2" title="2">all_stocks <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">length</span>()</a>
 <a class="sourceLine" id="cb1-3" title="3"><span class="co">#&gt; [1] 76</span></a></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">dplyr<span class="op">::</span><span class="kw">data_frame</span>(<span class="dt">Firm =</span> all_stocks) <span class="op">%&gt;%</span></a>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">dplyr<span class="op">::</span><span class="kw">tibble</span>(<span class="dt">Firm =</span> all_stocks) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb2-2" title="2"><span class="st">    </span><span class="kw">head</span>(<span class="dt">n =</span> <span class="dv">10</span>) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb2-3" title="3"><span class="st">    </span>knitr<span class="op">::</span><span class="kw">kable</span>()</a></code></pre></div>
 <table>
@@ -429,7 +429,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <a class="sourceLine" id="cb5-4" title="4">ipo_dates &lt;-<span class="st"> </span>firm_sample <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb5-5" title="5"><span class="st">    </span>purrr<span class="op">::</span><span class="kw">map</span>(CSE<span class="op">::</span>ipo_date)</a>
 <a class="sourceLine" id="cb5-6" title="6"></a>
-<a class="sourceLine" id="cb5-7" title="7">dplyr<span class="op">::</span><span class="kw">data_frame</span>(<span class="dt">Firm =</span> firm_sample, <span class="dt">IPO_Date =</span> <span class="kw">do.call</span>(c, ipo_dates)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-7" title="7">dplyr<span class="op">::</span><span class="kw">tibble</span>(<span class="dt">Firm =</span> firm_sample, <span class="dt">IPO_Date =</span> <span class="kw">do.call</span>(c, ipo_dates)) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb5-8" title="8"><span class="st">    </span>knitr<span class="op">::</span><span class="kw">kable</span>()</a></code></pre></div>
 <table>
 <thead>
@@ -440,24 +440,24 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">MAROC LEASING</td>
-<td align="left">1997-02-27</td>
-</tr>
-<tr class="even">
-<td align="left">SOCIETE DES BOISSONS DU MAROC</td>
-<td align="left">1943-08-13</td>
-</tr>
-<tr class="odd">
-<td align="left">BMCI</td>
-<td align="left">1972-02-28</td>
-</tr>
-<tr class="even">
-<td align="left">MINIERE TOUISSIT</td>
-<td align="left">2008-06-04</td>
-</tr>
-<tr class="odd">
 <td align="left">AFRIC INDUSTRIES SA</td>
 <td align="left">2012-01-05</td>
+</tr>
+<tr class="even">
+<td align="left">COSUMAR</td>
+<td align="left">1985-06-03</td>
+</tr>
+<tr class="odd">
+<td align="left">REBAB COMPANY</td>
+<td align="left">1954-06-28</td>
+</tr>
+<tr class="even">
+<td align="left">STOKVIS NORD AFRIQUE</td>
+<td align="left">2007-12-03</td>
+</tr>
+<tr class="odd">
+<td align="left">DELTA HOLDING</td>
+<td align="left">2008-05-15</td>
 </tr>
 </tbody>
 </table>

@@ -24,7 +24,7 @@
 #' @importFrom rvest html_attr
 #' @importFrom xml2 read_html
 #' @importFrom stringr str_replace_all
-#' @importFrom dplyr rename_
+#' @importFrom dplyr rename
 #'
 #' @examples
 #' \dontrun{get_IV('MASI', '2014/01/01', '2016/12/31')}
@@ -67,7 +67,7 @@ get_IV <- function(index_code, from, to) {
 
         table$Change <- NULL
 
-        table %<>% dplyr::rename_(Date = 'Session')
+        table %<>% dplyr::rename(Date = 'Session')
 
         return(table) # Already arranged in asc order
     },

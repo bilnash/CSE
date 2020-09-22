@@ -7,7 +7,7 @@
 #' @return a dataframe
 #'
 #' @importFrom dplyr inner_join
-#' @importFrom dplyr select_
+#' @importFrom dplyr select
 #'
 #'
 get_OHLCAQVCap <- function(symbol, from, to) {
@@ -24,7 +24,7 @@ get_OHLCAQVCap <- function(symbol, from, to) {
     data_OHLCap <- get_OHLCap(symbol, from, to)
 
     dplyr::inner_join(data_CAQV, data_OHLCap, by = 'Date') %>%
-        dplyr::select_('Date', 'Open', 'High', 'Low', 'Close',
+        dplyr::select('Date', 'Open', 'High', 'Low', 'Close',
                        'Adjusted', 'Quantity', 'Volume', 'Capitalisation') %>%
         return()
 

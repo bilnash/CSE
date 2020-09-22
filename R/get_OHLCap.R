@@ -24,8 +24,8 @@
 #' @importFrom rvest html_attr
 #' @importFrom xml2 read_html
 #' @importFrom stringr str_replace_all
-#' @importFrom dplyr arrange_
-#' @importFrom dplyr rename_
+#' @importFrom dplyr arrange
+#' @importFrom dplyr rename
 #'
 #' @examples
 #' \dontrun{get_OHLCap('COSUMAR', '2014/01/01', '2016/12/31')}
@@ -88,13 +88,13 @@ get_OHLCap <- function(stock_name, from, to) {
             table$`+ Intraday low`%<>% as.numeric()
             table$Capitalisation %<>% as.numeric()
 
-            table %<>% dplyr::rename_(Date = 'Session',
-                                      Open = '`Reference price`',
-                                      High = '`+Intraday high`',
-                                      Low = '`+ Intraday low`')
+            table %<>% dplyr::rename(Date = 'Session',
+                                     Open = 'Reference price',
+                                     High = '+Intraday high',
+                                     Low = '+ Intraday low')
 
             return(table %>%
-                       dplyr::arrange_('Date'))
+                       dplyr::arrange('Date'))
         },
         error = function(e) {
             #warning('Your query result is empty. Verify that you specified a valid symbol name or that the symbol was listed in CSE during the requested dates interval')
