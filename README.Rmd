@@ -58,12 +58,12 @@ head(available_indexes)
 ```
 
 ```{r historical_stocks, warning=FALSE}
-cosumar_data <- CSE::get_symbol(symbol = "COSUMAR", from = "2018-01-01", to = "2018-06-30", type = "stock")
+cosumar_data <- CSE::get_symbol(symbol = "COSUMAR", from = "2015-01-01", to = "2020-09-22", type = "stock")
 
-masi_data <- CSE::get_symbol(symbol = "MASI", from = "2018-01-01", to = "2018-06-30", type = "index")
+masi_data <- CSE::get_symbol(symbol = "MASI", from = "2015-01-01", to = "2020-09-22", type = "index")
 
 head(cosumar_data) 
 
-head(masi_data)
+tail(masi_data)
 
 ```
