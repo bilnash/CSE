@@ -56,29 +56,47 @@ listed_stocks <- CSE::listed_symbols(type = "stock")
 available_indexes <- CSE::listed_symbols(type = "index")
 ```
 
-```{r}
+```{r, eval=FALSE}
+sample(listed_stocks, size = 6L)
+```
+
+```{r, echo=FALSE}
 sample(listed_stocks, size = 6L) %>%
     dplyr::tibble(Stock = .) %>%
     knitr::kable()
 ```
 
-```{r}
+```{r, eval=FALSE}
+head(available_indexes)
+```
+
+```{r, echo=FALSE}
 head(available_indexes) %>%
     knitr::kable()
 ```
 
 ```{r historical_stocks}
-cosumar_data <- CSE::get_symbol(symbol = "COSUMAR", from = "2015-01-01", to = "2020-09-22", type = "stock", format.as.xts = FALSE)
+cosumar_data <- CSE::get_symbol(symbol = "COSUMAR", from = "2015-01-01", to = "2020-09-22", 
+                                type = "stock", format.as.xts = FALSE)
 
-masi_data <- CSE::get_symbol(symbol = "MASI", from = "2015-01-01", to = "2020-09-22", type = "index", format.as.xts = FALSE)
+masi_data <- CSE::get_symbol(symbol = "MASI", from = "2015-01-01", to = "2020-09-22", 
+                             type = "index", format.as.xts = FALSE)
 ```
 
-```{r}
+```{r, eval=FALSE}
+head(cosumar_data)
+```
+
+```{r, echo=FALSE}
 head(cosumar_data) %>%
     knitr::kable()
 ```
 
-```{r}
+```{r, eval=FALSE}
+tail(masi_data)
+```
+
+```{r, echo=FALSE}
 tail(masi_data) %>%
     knitr::kable()
 ```

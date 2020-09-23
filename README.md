@@ -50,23 +50,20 @@ available_indexes <- CSE::listed_symbols(type = "index")
 ```
 
 ``` r
-sample(listed_stocks, size = 6L) %>%
-    dplyr::tibble(Stock = .) %>%
-    knitr::kable()
+sample(listed_stocks, size = 6L)
 ```
 
-| Stock            |
-| :--------------- |
-| BMCI             |
-| WAFA ASSURANCE   |
-| REBAB COMPANY    |
-| IB MAROC.COM     |
-| CIMENTS DU MAROC |
-| ENNAKL           |
+| Stock             |
+| :---------------- |
+| AUTO HALL         |
+| SALAFIN           |
+| UNIMER            |
+| LYDEC             |
+| AGMA              |
+| ATTIJARIWAFA BANK |
 
 ``` r
-head(available_indexes) %>%
-    knitr::kable()
+head(available_indexes)
 ```
 
 | INDEX\_CODE | DESCRIPTION                       |
@@ -79,14 +76,15 @@ head(available_indexes) %>%
 | ESGI        | Casablanca ESG 10                 |
 
 ``` r
-cosumar_data <- CSE::get_symbol(symbol = "COSUMAR", from = "2015-01-01", to = "2020-09-22", type = "stock", format.as.xts = FALSE)
+cosumar_data <- CSE::get_symbol(symbol = "COSUMAR", from = "2015-01-01", to = "2020-09-22", 
+                                type = "stock", format.as.xts = FALSE)
 
-masi_data <- CSE::get_symbol(symbol = "MASI", from = "2015-01-01", to = "2020-09-22", type = "index", format.as.xts = FALSE)
+masi_data <- CSE::get_symbol(symbol = "MASI", from = "2015-01-01", to = "2020-09-22", 
+                             type = "index", format.as.xts = FALSE)
 ```
 
 ``` r
-head(cosumar_data) %>%
-    knitr::kable()
+head(cosumar_data)
 ```
 
 | Date       |   Open |   High |       Low |   Close | Adjusted | Quantity |     Volume | Capitalisation |
@@ -99,8 +97,7 @@ head(cosumar_data) %>%
 | 2015-01-12 |  168.5 | 112.32 |    111.42 |  167.15 |   111.42 |      302 |    50770.8 |     7005351776 |
 
 ``` r
-tail(masi_data) %>%
-    knitr::kable()
+tail(masi_data)
 ```
 
 | Date       |    Value |

@@ -9,7 +9,11 @@ knitr::opts_chunk$set(
 all_stocks <- CSE::listed_symbols(type = "stock")
 all_stocks %>% length()
 
-## ---- warning=FALSE-----------------------------------------------------------
+## ---- warning=FALSE, eval=FALSE-----------------------------------------------
+#  dplyr::tibble(Firm = all_stocks) %>%
+#      head(n = 10)
+
+## ---- warning=FALSE, echo=FALSE-----------------------------------------------
 dplyr::tibble(Firm = all_stocks) %>%
     head(n = 10) %>%
     knitr::kable()
@@ -18,7 +22,11 @@ dplyr::tibble(Firm = all_stocks) %>%
 all_indexes <- CSE::listed_symbols(type = "index")
 all_indexes %>% nrow()
 
-## ---- warning=FALSE-----------------------------------------------------------
+## ---- warning=FALSE, eval=FALSE-----------------------------------------------
+#  all_indexes %>%
+#      head(n = 10)
+
+## ---- warning=FALSE, echo=FALSE-----------------------------------------------
 all_indexes %>%
     head(n = 10) %>%
     knitr::kable()
@@ -30,6 +38,10 @@ firm_sample <- all_stocks %>%
 ipo_dates <- firm_sample %>%
     purrr::map(CSE::ipo_date)
 
+## ---- warning=FALSE, eval=FALSE-----------------------------------------------
+#  dplyr::tibble(Firm = firm_sample, IPO_Date = do.call(c, ipo_dates))
+
+## ---- warning=FALSE, echo=FALSE-----------------------------------------------
 dplyr::tibble(Firm = firm_sample, IPO_Date = do.call(c, ipo_dates)) %>%
     knitr::kable()
 
