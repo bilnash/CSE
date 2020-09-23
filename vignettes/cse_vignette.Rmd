@@ -77,15 +77,25 @@ masi <- CSE::get_symbol("MASI", "2016-01-01", "2018-07-16", type = "index")
 
 ```{r, warning=FALSE}
 dim(iam)
+```
 
+```{r, warning=FALSE}
 dim(masi)
+```
 
+```{r, warning=FALSE}
 xts::first(iam, n = 5)
+```
 
+```{r, warning=FALSE}
 xts::last(iam, n = 5)
+```
 
+```{r, warning=FALSE}
 xts::first(masi, n = 5)
+```
 
+```{r, warning=FALSE}
 xts::last(masi, n = 5)
 ```
 

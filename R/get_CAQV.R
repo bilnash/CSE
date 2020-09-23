@@ -24,7 +24,7 @@
 #' @importFrom magrittr %<>%
 #' @importFrom stringr str_replace_all
 #' @importFrom utils tail
-#' @importFrom dplyr arrange
+#' @importFrom dplyr arrange_at
 #' @importFrom dplyr rename
 #'
 #' @examples
@@ -86,7 +86,7 @@ get_CAQV <- function(stock_name, from, to) {
                                           Volume = 'VOLUME')
 
             return(data_table %>%
-                       dplyr::arrange('Date'))
+                       dplyr::arrange_at('Date'))
         },
         error = function(e) {
             #warning('Your query result is empty. Verify that you specified a valid symbol name or that the symbol was listed in CSE during the requested dates interval')

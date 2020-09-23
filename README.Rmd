@@ -38,32 +38,47 @@ devtools::install_github("bilnash/CSE", build_vignettes = TRUE)
 
 ## Documentation
 
-A detailled documentation can be found in the package vignette. 
+Please refer to the package vignette: 
 
 ```{r documentation, eval = FALSE}
 vignette("cse_vignette", package = "CSE")
 ```
 
-## Example
+Also available at: https://bilnash.github.io/CSE/vignettes/cse_vignette.html
+
+## Basic Example
 
 This is a basic example which shows you how to use CSE:
 
-```{r listed_stocks, warning=FALSE}
+```{r listed_stocks}
 listed_stocks <- CSE::listed_symbols(type = "stock")
+
 available_indexes <- CSE::listed_symbols(type = "index")
-
-head(listed_stocks)
-
-head(available_indexes)
 ```
 
-```{r historical_stocks, warning=FALSE}
-cosumar_data <- CSE::get_symbol(symbol = "COSUMAR", from = "2015-01-01", to = "2020-09-22", type = "stock")
+```{r}
+sample(listed_stocks, size = 6L) %>%
+    dplyr::tibble(Stock = .) %>%
+    knitr::kable()
+```
 
-masi_data <- CSE::get_symbol(symbol = "MASI", from = "2015-01-01", to = "2020-09-22", type = "index")
+```{r}
+head(available_indexes) %>%
+    knitr::kable()
+```
 
-head(cosumar_data) 
+```{r historical_stocks}
+cosumar_data <- CSE::get_symbol(symbol = "COSUMAR", from = "2015-01-01", to = "2020-09-22", type = "stock", format.as.xts = FALSE)
 
-tail(masi_data)
+masi_data <- CSE::get_symbol(symbol = "MASI", from = "2015-01-01", to = "2020-09-22", type = "index", format.as.xts = FALSE)
+```
 
+```{r}
+head(cosumar_data) %>%
+    knitr::kable()
+```
+
+```{r}
+tail(masi_data) %>%
+    knitr::kable()
 ```

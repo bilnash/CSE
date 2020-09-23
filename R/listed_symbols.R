@@ -10,6 +10,7 @@
 #' @return if \code{type == "stock"}: character vector
 #'
 #' @importFrom stringr str_to_lower
+#' @importFrom tibble as_tibble
 #'
 #' @export
 #'
@@ -35,7 +36,10 @@ listed_symbols <- function(type = 'all') {
     }
     else if (type == 'index')
     {
-        return(indexes_metadata())
+        return(
+            indexes_metadata() %>%
+                tibble::as_tibble()
+        )
     }
     else
     {

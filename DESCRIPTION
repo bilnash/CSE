@@ -9,7 +9,7 @@ Description: A simple package to work with Casablanca Stock Exchange (Morocco) f
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Imports: lubridate, httr, magrittr, rvest, stringr, xml2, xts, dplyr, purrr
+Imports: lubridate, httr, magrittr, rvest, stringr, xml2, xts, dplyr, purrr, tibble
 Suggests: testthat,
     knitr,
     rmarkdown

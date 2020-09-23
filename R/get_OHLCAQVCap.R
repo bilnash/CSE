@@ -8,6 +8,7 @@
 #'
 #' @importFrom dplyr inner_join
 #' @importFrom dplyr select
+#' @importFrom tibble as_tibble
 #'
 #'
 get_OHLCAQVCap <- function(symbol, from, to) {
@@ -26,6 +27,7 @@ get_OHLCAQVCap <- function(symbol, from, to) {
     dplyr::inner_join(data_CAQV, data_OHLCap, by = 'Date') %>%
         dplyr::select('Date', 'Open', 'High', 'Low', 'Close',
                        'Adjusted', 'Quantity', 'Volume', 'Capitalisation') %>%
+        tibble::as_tibble() %>%
         return()
 
 }

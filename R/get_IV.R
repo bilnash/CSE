@@ -25,6 +25,7 @@
 #' @importFrom xml2 read_html
 #' @importFrom stringr str_replace_all
 #' @importFrom dplyr rename
+#' @importFrom tibble as_tibble
 #'
 #' @examples
 #' \dontrun{get_IV('MASI', '2014/01/01', '2016/12/31')}
@@ -69,7 +70,10 @@ get_IV <- function(index_code, from, to) {
 
         table %<>% dplyr::rename(Date = 'Session')
 
-        return(table) # Already arranged in asc order
+        return(
+            table %>%
+                tibble::as_tibble()
+        ) # Already arranged in asc order
     },
     error = function(e) {
         #warning('Your query result is empty. Verify that you specified a valid symbol name or that the symbol was listed in CSE during the requested dates interval')
