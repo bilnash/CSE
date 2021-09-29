@@ -62,14 +62,14 @@ available_indexes <- CSE::listed_symbols(type = "index")
 sample(listed_stocks, size = 6L)
 ```
 
-| Stock        |
-|:-------------|
-| M2M Group    |
-| ZELLIDJA S.A |
-| LABEL VIE    |
-| ALLIANCES    |
-| MUTANDIS SCA |
-| MICRODATA    |
+| Stock         |
+|:--------------|
+| ZELLIDJA S.A  |
+| CIH           |
+| SAMIR         |
+| REBAB COMPANY |
+| MED PAPER     |
+| SOTHEMA       |
 
 ``` r
 head(available_indexes)
@@ -85,10 +85,10 @@ head(available_indexes)
 | ESGI        | Casablanca ESG 10                 |
 
 ``` r
-cosumar_data <- CSE::get_symbol(symbol = "COSUMAR", from = "2015-01-01", to = "2020-09-22", 
+cosumar_data <- CSE::get_symbol(symbol = "COSUMAR", from = "2015-01-01", to = "2021-09-29", 
                                 type = "stock", format.as.xts = FALSE)
 
-masi_data <- CSE::get_symbol(symbol = "MASI", from = "2015-01-01", to = "2020-09-22", 
+masi_data <- CSE::get_symbol(symbol = "MASI", from = "2015-01-01", to = "2021-09-29", 
                              type = "index", format.as.xts = FALSE)
 ```
 
@@ -111,9 +111,9 @@ tail(masi_data)
 
 | Date       |    Value |
 |:-----------|---------:|
-| 2020-09-15 | 10128.78 |
-| 2020-09-16 | 10101.06 |
-| 2020-09-17 | 10064.32 |
-| 2020-09-18 | 10084.21 |
-| 2020-09-21 | 10122.59 |
-| 2020-09-22 | 10119.53 |
+| 2021-09-22 | 12973.40 |
+| 2021-09-23 | 13078.03 |
+| 2021-09-24 | 13131.88 |
+| 2021-09-27 | 13122.02 |
+| 2021-09-28 | 13169.39 |
+| 2021-09-29 | 13197.28 |

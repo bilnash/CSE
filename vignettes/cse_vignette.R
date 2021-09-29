@@ -46,8 +46,8 @@ dplyr::tibble(Firm = firm_sample, IPO_Date = do.call(c, ipo_dates)) %>%
     knitr::kable()
 
 ## ---- warning=FALSE-----------------------------------------------------------
-iam <- CSE::get_symbol("ITISSALAT AL-MAGHRIB", "2016-01-01", "2018-07-16", type = "stock")
-masi <- CSE::get_symbol("MASI", "2016-01-01", "2018-07-16", type = "index")
+iam <- CSE::get_symbol("ITISSALAT AL-MAGHRIB", "2016-01-01", "2021-09-29", type = "stock")
+masi <- CSE::get_symbol("MASI", "2016-01-01", "2021-09-29", type = "index")
 
 ## ---- warning=FALSE-----------------------------------------------------------
 dim(iam)
