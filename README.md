@@ -11,17 +11,26 @@ programming workflow with Casablanca stock exchange data.
 
 Currently, it implements 3 mains functions:
 
-  - `listed_symbols`: Returns all listed symbols (stocks, indexes, or
+-   `listed_symbols`: Returns all listed symbols (stocks, indexes, or
     both) in Casablanca stock exchange.
 
-  - `get_symbol`: Returns a symbol historical data corresponding to a
+-   `get_symbol`: Returns a symbol historical data corresponding to a
     specific date range.
 
-  - `ipo_date`: Returns a symbol IPO (Initial Public Offering) date.
+-   `ipo_date`: Returns a symbol IPO (Initial Public Offering) date.
 
 ## Installation
 
 You can install CSE from github with:
+
+1.  Quick Installation without vignette:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("bilnash/CSE", build_vignettes = FALSE)
+```
+
+1.  Installation with vignette:
 
 ``` r
 # install.packages("devtools")
@@ -53,25 +62,25 @@ available_indexes <- CSE::listed_symbols(type = "index")
 sample(listed_stocks, size = 6L)
 ```
 
-| Stock             |
-| :---------------- |
-| AUTO HALL         |
-| SALAFIN           |
-| UNIMER            |
-| LYDEC             |
-| AGMA              |
-| ATTIJARIWAFA BANK |
+| Stock               |
+|:--------------------|
+| CENTRALE DANONE     |
+| HPS                 |
+| AUTO HALL           |
+| AFRIC INDUSTRIES SA |
+| ATLANTASANAD        |
+| TAQA MOROCCO        |
 
 ``` r
 head(available_indexes)
 ```
 
 | INDEX\_CODE | DESCRIPTION                       |
-| :---------- | :-------------------------------- |
+|:------------|:----------------------------------|
 | AGRO        | Food producers & Processors       |
 | ASSUR       | Insurance                         |
 | BANK        | Banks                             |
-| B\&MC       | Construction & Building Materials |
+| B&MC        | Construction & Building Materials |
 | BOISS       | Beverages                         |
 | ESGI        | Casablanca ESG 10                 |
 
@@ -88,7 +97,7 @@ head(cosumar_data)
 ```
 
 | Date       |   Open |   High |       Low |   Close | Adjusted | Quantity |     Volume | Capitalisation |
-| :--------- | -----: | -----: | --------: | ------: | -------: | -------: | ---------: | -------------: |
+|:-----------|-------:|-------:|----------:|--------:|---------:|---------:|-----------:|---------------:|
 | 2015-01-02 |    0.0 |    NaN |  66660.20 | 1600.00 |   106.66 |        0 |        0.0 |     6705691200 |
 | 2015-01-06 | 1532.0 | 111.26 |    102.12 | 1669.00 |   111.26 |       36 |    56522.0 |     6994874133 |
 | 2015-01-07 |    0.0 |    NaN | 666601.99 |  166.90 |   111.26 |        0 |        0.0 |     6994874133 |
@@ -101,7 +110,7 @@ tail(masi_data)
 ```
 
 | Date       |    Value |
-| :--------- | -------: |
+|:-----------|---------:|
 | 2020-09-15 | 10128.78 |
 | 2020-09-16 | 10101.06 |
 | 2020-09-17 | 10064.32 |

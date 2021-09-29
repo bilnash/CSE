@@ -31,7 +31,16 @@ Currently, it implements 3 mains functions:
 
 You can install CSE from github with:
 
+1. Quick Installation without vignette:
+
 ```{r gh-installation, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("bilnash/CSE", build_vignettes = FALSE)
+```
+
+2. Installation with vignette:
+
+```{r gh-installation2, eval = FALSE}
 # install.packages("devtools")
 devtools::install_github("bilnash/CSE", build_vignettes = TRUE)
 ```
