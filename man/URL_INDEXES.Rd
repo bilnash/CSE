@@ -4,7 +4,9 @@
 \name{URL_INDEXES}
 \alias{URL_INDEXES}
 \title{URL For Indexes Data}
-\format{An object of class \code{character} of length 1.}
+\format{
+An object of class \code{character} of length 1.
+}
 \usage{
 URL_INDEXES
 }

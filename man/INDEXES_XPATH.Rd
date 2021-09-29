@@ -4,7 +4,9 @@
 \name{INDEXES_XPATH}
 \alias{INDEXES_XPATH}
 \title{Where To Get The List Of All Available Indexes}
-\format{An object of class \code{character} of length 1.}
+\format{
+An object of class \code{character} of length 1.
+}
 \usage{
 INDEXES_XPATH
 }

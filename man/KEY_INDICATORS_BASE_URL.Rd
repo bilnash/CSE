@@ -5,7 +5,9 @@
 \alias{KEY_INDICATORS_BASE_URL}
 \title{Base URL to Get a Stock Key Indicators
 Should be Appended with the Stock Code Value}
-\format{An object of class \code{character} of length 1.}
+\format{
+An object of class \code{character} of length 1.
+}
 \usage{
 KEY_INDICATORS_BASE_URL
 }

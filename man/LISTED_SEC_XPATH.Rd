@@ -4,7 +4,9 @@
 \name{LISTED_SEC_XPATH}
 \alias{LISTED_SEC_XPATH}
 \title{Where To Get The List Of All Listed Stocks}
-\format{An object of class \code{character} of length 1.}
+\format{
+An object of class \code{character} of length 1.
+}
 \usage{
 LISTED_SEC_XPATH
 }

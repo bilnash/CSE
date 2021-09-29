@@ -4,7 +4,9 @@
 \name{VIEW_STATE_XPATH}
 \alias{VIEW_STATE_XPATH}
 \title{VIEW_STATE XPath}
-\format{An object of class \code{character} of length 1.}
+\format{
+An object of class \code{character} of length 1.
+}
 \usage{
 VIEW_STATE_XPATH
 }

@@ -13,5 +13,5 @@ Imports: lubridate, httr, magrittr, rvest, stringr, xml2, xts, dplyr, purrr, tib
 Suggests: testthat,
     knitr,
     rmarkdown
-RoxygenNote: 6.0.1
+RoxygenNote: 7.1.1
 VignetteBuilder: knitr

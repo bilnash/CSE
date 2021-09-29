@@ -4,7 +4,9 @@
 \name{IPO_DATE_XPATH}
 \alias{IPO_DATE_XPATH}
 \title{IPO Date XPATH}
-\format{An object of class \code{character} of length 1.}
+\format{
+An object of class \code{character} of length 1.
+}
 \usage{
 IPO_DATE_XPATH
 }
