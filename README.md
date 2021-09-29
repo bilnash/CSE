@@ -23,14 +23,14 @@ Currently, it implements 3 mains functions:
 
 You can install CSE from github with:
 
-    1. Quick Installation without vignette:
+-   Quick Installation without vignette:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("bilnash/CSE", build_vignettes = FALSE)
 ```
 
-    2. Installation with vignette:
+-   Installation with vignette:
 
 ``` r
 # install.packages("devtools")
@@ -62,14 +62,14 @@ available_indexes <- CSE::listed_symbols(type = "index")
 sample(listed_stocks, size = 6L)
 ```
 
-| Stock                   |
-|:------------------------|
-| AFMA                    |
-| DELATTRE LEVIVIER MAROC |
-| SALAFIN                 |
-| RES DAR SAADA           |
-| SOTHEMA                 |
-| SONASID                 |
+| Stock        |
+|:-------------|
+| M2M Group    |
+| ZELLIDJA S.A |
+| LABEL VIE    |
+| ALLIANCES    |
+| MUTANDIS SCA |
+| MICRODATA    |
 
 ``` r
 head(available_indexes)
