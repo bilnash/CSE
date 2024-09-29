@@ -1,8 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-[![Build
-Status](https://travis-ci.com/bilnash/CSE.svg?branch=master)](https://travis-ci.com/bilnash/CSE)
+[![Project Status: Moved to https://github.com/bilnash/RCSE – The project has been moved to a new location, and the version at that location is no longer working due to changes in Casablanca Stock Exchange API.](https://www.repostatus.org/badges/latest/moved.svg)](https://www.repostatus.org/#moved) to [https://github.com/bilnash/RCSE](https://github.com/bilnash/RCSE)
 
 # CSE
 
